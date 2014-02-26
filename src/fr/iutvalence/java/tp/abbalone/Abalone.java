@@ -6,9 +6,9 @@ package fr.iutvalence.java.tp.abbalone;
  */
 public class Abalone
 {
-	// TODO écrire un commentaire plus précis
+	// TODO écrire un commentaire plus précis (done)
 	/**
-	 * construit une partie d'Abalone
+	 * démarre une partie d'Abalone (pour 2 joueurs)
 	 */
 	public Abalone()
 	{
