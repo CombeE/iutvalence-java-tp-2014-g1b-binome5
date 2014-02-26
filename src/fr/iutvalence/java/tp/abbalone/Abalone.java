@@ -6,18 +6,22 @@ package fr.iutvalence.java.tp.abbalone;
  */
 public class Abalone
 {
+	
+	private Joueur joueur1;
+	private Joueur joueur2;
+	private Plateau plateau;
+
 	// TODO écrire un commentaire plus précis (done)
 	/**
 	 * démarre une partie d'Abalone (pour 2 joueurs)
 	 */
 	public Abalone()
 	{
-		Joueur joueur1 = new Joueur();
-		Joueur joueur2 = new Joueur();
-		Plateau plateau = new Plateau();
+		this.joueur1 = new Joueur();
+		this.joueur2 = new Joueur();
+		this.plateau = new Plateau();
 		
 	}
-	
 	
 	
 	
@@ -26,6 +30,34 @@ public class Abalone
 	 */
 	public void jouer()
 	{
+		while (true)
+		{
+			if (unJoueurAGagne()) break;
+			joueurSuivant().obtenirBoulesADeplacer();
+			deplacerBoules();
+		}
+	}
+
+
+
+	private Joueur joueurSuivant()
+	{
+		// TODO Auto-generated method stub
+		return this.joueur1;
+	}
+
+
+
+	private void deplacerBoules()
+	{
+		// TODO Auto-generated method stub
 		
+	}
+
+
+
+	private boolean unJoueurAGagne()
+	{
+		return false;
 	}
 }
