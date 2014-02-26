@@ -1,15 +1,21 @@
 package fr.iutvalence.java.tp.abbalone;
 
+// TODO écrire un commentaire plus précis
+
 /**
  * Creer un plateau ainsi que ses boules
  * @author combeer
  */
 public class Plateau
 {
+	// TODO écrire un commentaire
 	private static final int NOMBRE_DE_LIGNES = 9;
-	
+
+	// TODO écrire un commentaire
 	private static final int NOMBRE_DE_COLONNES = 9;
 
+	// TODO écrire un commentaire
+	// TODO définir les valeurs possibles par des constantes
 	private int[][] etatDesCases;
 
 	/**

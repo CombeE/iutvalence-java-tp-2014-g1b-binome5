@@ -6,7 +6,7 @@ package fr.iutvalence.java.tp.abbalone;
  */
 public class Abalone
 {
-	
+	// TODO écrire un commentaire plus précis
 	/**
 	 * construit une partie d'Abalone
 	 */
