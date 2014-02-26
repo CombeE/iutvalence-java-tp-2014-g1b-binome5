@@ -23,6 +23,14 @@ public class Plateau
 	 */
 	private static final int NOMBRE_DE_COLONNES = 9;
 	
+	// TODO écrire un commentaire (done)
+
+	// TODO définir les valeurs possibles par des constantes (done)
+	/**
+	 * L'état d'occupation des cases
+	 */
+	public int[][] etatDesCases;
+	
 	/**
 	 * valeur d'une case noire
 	 */
@@ -47,13 +55,7 @@ public class Plateau
 	 */
 	public Plateau()
 	{
-		// TODO écrire un commentaire (done)
-		
-		// TODO définir les valeurs possibles par des constantes (done)
-		/**
-		 * L'état d'occupation des cases
-		 */
-		int[][] etatDesCases=
+		this.etatDesCases = new int[][]
 		{
 			{VIDE, VIDE, VIDE, BLANCHE, BLANCHE, INVALIDE, INVALIDE, INVALIDE, INVALIDE},
 			{VIDE, VIDE, VIDE, VIDE, BLANCHE, BLANCHE, INVALIDE, INVALIDE, INVALIDE},
