@@ -17,8 +17,8 @@ public class Abalone
 	 */
 	public Abalone()
 	{
-		this.joueur1 = new Joueur();
-		this.joueur2 = new Joueur();
+		//this.joueur1 = new Joueur();
+		//this.joueur2 = new Joueur();
 		this.plateau = new Plateau();
 		
 	}
@@ -42,7 +42,6 @@ public class Abalone
 
 	private Joueur joueurSuivant()
 	{
-		// TODO Auto-generated method stub
 		return this.joueur1;
 	}
 
@@ -60,4 +59,15 @@ public class Abalone
 	{
 		return false;
 	}
+
+
+
+	@Override
+	public String toString()
+	{
+		
+		return this.plateau.toString();
+	}
+	
+	
 }

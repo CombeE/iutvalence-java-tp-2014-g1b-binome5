@@ -23,7 +23,8 @@ public class LauncherAbalone
 		Abalone partieDabalone = new Abalone();
 		System.out.println("Debut de la partie");
 		
-		partieDabalone.jouer();
+		System.out.println(partieDabalone.toString());
+		//partieDabalone.jouer();
 		
 		System.out.println("Fin de la partie");
 

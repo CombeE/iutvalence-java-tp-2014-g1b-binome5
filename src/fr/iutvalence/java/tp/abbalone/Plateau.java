@@ -14,14 +14,14 @@ public class Plateau
 	/**
 	 * Initie le nombre de lignes d'un plateau d'Abalone
 	 */
-	private static final int NOMBRE_DE_LIGNES = 9;
+	public static final int NOMBRE_DE_LIGNES = 9;
 
 	// TODO écrire un commentaire (done)
 	
 	/**
 	 *  Initie le nombre de colonnes d'un plateau d'Abalone
 	 */
-	private static final int NOMBRE_DE_COLONNES = 9;
+	public static final int NOMBRE_DE_COLONNES = 9;
 	
 	// TODO écrire un commentaire (done)
 
@@ -29,24 +29,9 @@ public class Plateau
 	/**
 	 * L'état d'occupation des cases
 	 */
-	public int[][] etatDesCases;
+	public Couleur[][] etatDesCases;
 	
-	/**
-	 * valeur d'une case noire
-	 */
-	private static final int NOIRE = -1;
-	/**
-	 * valeur pour une case blanche
-	 */
-	private static final int BLANCHE = 1;
-	/**
-	 * valeur pour une case vide
-	 */
-	private static final int VIDE = 0;
-	/**
-	 * valeur d'une case invalide (qui n'est pas comprise sur le plateau
-	 */
-	private static final int INVALIDE = 2;
+
 	
 	
 	/**
@@ -55,18 +40,47 @@ public class Plateau
 	 */
 	public Plateau()
 	{
-		this.etatDesCases = new int[][]
+		this.etatDesCases = new Couleur[][]
 		{
-			{VIDE, VIDE, VIDE, BLANCHE, BLANCHE, INVALIDE, INVALIDE, INVALIDE, INVALIDE},
-			{VIDE, VIDE, VIDE, VIDE, BLANCHE, BLANCHE, INVALIDE, INVALIDE, INVALIDE},
-			{VIDE, VIDE, VIDE, VIDE, BLANCHE, BLANCHE, BLANCHE, INVALIDE, INVALIDE},
-			{NOIRE, VIDE, VIDE, VIDE, VIDE, BLANCHE, BLANCHE, BLANCHE, INVALIDE},
-			{NOIRE, NOIRE, NOIRE, VIDE, VIDE, VIDE, BLANCHE, BLANCHE, BLANCHE},
-			{INVALIDE, NOIRE, NOIRE, NOIRE, VIDE, VIDE, VIDE, VIDE, BLANCHE},
-			{INVALIDE, INVALIDE, NOIRE, NOIRE, NOIRE, VIDE, VIDE, VIDE, VIDE},
-			{INVALIDE, INVALIDE, INVALIDE, NOIRE, NOIRE, VIDE, VIDE, VIDE, VIDE},
-			{INVALIDE, INVALIDE, INVALIDE, INVALIDE, NOIRE, NOIRE,VIDE, VIDE, VIDE}
+			{Couleur.VIDE, Couleur.VIDE, Couleur.VIDE, Couleur.BLANCHE, Couleur.BLANCHE, Couleur.INVALIDE, Couleur.INVALIDE, Couleur.INVALIDE, Couleur.INVALIDE},
+			{Couleur.VIDE, Couleur.VIDE, Couleur.VIDE, Couleur.VIDE, Couleur.BLANCHE, Couleur.BLANCHE, Couleur.INVALIDE, Couleur.INVALIDE, Couleur.INVALIDE},
+			{Couleur.VIDE, Couleur.VIDE, Couleur.VIDE, Couleur.VIDE, Couleur.BLANCHE, Couleur.BLANCHE, Couleur.BLANCHE, Couleur.INVALIDE, Couleur.INVALIDE},
+			{Couleur.NOIRE, Couleur.VIDE, Couleur.VIDE, Couleur.VIDE, Couleur.VIDE, Couleur.BLANCHE, Couleur.BLANCHE, Couleur.BLANCHE, Couleur.INVALIDE},
+			{Couleur.NOIRE, Couleur.NOIRE, Couleur.NOIRE, Couleur.VIDE, Couleur.VIDE, Couleur.VIDE, Couleur.BLANCHE, Couleur.BLANCHE, Couleur.BLANCHE},
+			{Couleur.INVALIDE, Couleur.NOIRE, Couleur.NOIRE, Couleur.NOIRE, Couleur.VIDE, Couleur.VIDE, Couleur.VIDE, Couleur.VIDE, Couleur.BLANCHE},
+			{Couleur.INVALIDE, Couleur.INVALIDE, Couleur.NOIRE, Couleur.NOIRE, Couleur.NOIRE, Couleur.VIDE, Couleur.VIDE, Couleur.VIDE, Couleur.VIDE},
+			{Couleur.INVALIDE, Couleur.INVALIDE, Couleur.INVALIDE, Couleur.NOIRE, Couleur.NOIRE, Couleur.VIDE, Couleur.VIDE, Couleur.VIDE, Couleur.VIDE},
+			{Couleur.INVALIDE, Couleur.INVALIDE, Couleur.INVALIDE, Couleur.INVALIDE, Couleur.NOIRE, Couleur.NOIRE,Couleur.VIDE, Couleur.VIDE, Couleur.VIDE}
 		};
 			
 	}
+
+
+	@Override
+	public String toString()
+	{
+		String result = "";
+		
+		for (int nb_ligne = 0; nb_ligne<NOMBRE_DE_LIGNES; nb_ligne++)
+		{
+			for (int nb_colonne = 0; nb_colonne<NOMBRE_DE_COLONNES; nb_colonne++)
+			{
+				if (etatDesCases[nb_ligne][nb_colonne] == Couleur.BLANCHE)
+					result+="B";
+				else
+				{
+					if (etatDesCases[nb_ligne][nb_colonne] == Couleur.NOIRE)
+						result+="N";
+					else
+						result+=" ";
+						
+				}
+		
+			}
+			result+="\n";
+		}
+		return result;
+	}
+	
+	
 }
