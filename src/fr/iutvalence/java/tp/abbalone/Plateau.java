@@ -29,10 +29,7 @@ public class Plateau
 	/**
 	 * L'état d'occupation des cases
 	 */
-	public Couleur[][] etatDesCases;
-	
-
-	
+	private Couleur[][] etatDesCases;
 	
 	/**
 	 * Creer un plateau de jeu (constitue d'une grille et de 14 boules
@@ -65,11 +62,11 @@ public class Plateau
 		{
 			for (int nb_colonne = 0; nb_colonne<NOMBRE_DE_COLONNES; nb_colonne++)
 			{
-				if (etatDesCases[nb_ligne][nb_colonne] == Couleur.BLANCHE)
+				if (this.etatDesCases[nb_ligne][nb_colonne] == Couleur.BLANCHE)
 					result+="B";
 				else
 				{
-					if (etatDesCases[nb_ligne][nb_colonne] == Couleur.NOIRE)
+					if (this.etatDesCases[nb_ligne][nb_colonne] == Couleur.NOIRE)
 						result+="N";
 					else
 						result+=" ";
@@ -80,6 +77,11 @@ public class Plateau
 			result+="\n";
 		}
 		return result;
+	}
+	
+	public static void modifierCases(int coord1[], int coord2[])
+	{
+		
 	}
 	
 	
