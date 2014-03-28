@@ -7,9 +7,14 @@ package fr.iutvalence.java.tp.abbalone;
 public class Abalone
 {
 	
-	private Joueur joueur1;
-	private Joueur joueur2;
+	private static final int NOMBRE_DE_JOUEURS = 2;
+
+	private final Joueur[] joueurs;
+
 	private Plateau plateau;
+	
+	private int boulesNoiresSorties;
+	private int boulesBlanchesSorties;
 
 	// TODO écrire un commentaire plus précis (done)
 	/**
@@ -17,8 +22,9 @@ public class Abalone
 	 */
 	public Abalone()
 	{
-		//this.joueur1 = new Joueur();
-		//this.joueur2 = new Joueur();
+		this.joueurs = new Joueur[NOMBRE_DE_JOUEURS];
+		joueurs[0] = new Joueur();
+		joueurs[1] = new Joueur();
 		this.plateau = new Plateau();
 		
 	}
@@ -30,20 +36,36 @@ public class Abalone
 	 */
 	public void jouer()
 	{
+		int numeroDuJoueur = 0;
+		
 		while (true)
 		{
+			Joueur joueurCourant = this.joueurs[numeroDuJoueur];
+			
 			if (unJoueurAGagne()) break;
-			joueurSuivant().obtenirBoulesADeplacer();
+			Mouvement mouvement;
+			while (true)
+			{
+				mouvement = joueurCourant.obtenirMouvement();
+				if (this.estMouvementValide(mouvement)) break;
+			}
 			deplacerBoules();
+			
+		
+			numeroDuJoueur = (numeroDuJoueur +1 ) % NOMBRE_DE_JOUEURS;
+			
 		}
 	}
 
 
 
-	private Joueur joueurSuivant()
+	private boolean estMouvementValide(Mouvement mouvement)
 	{
-		return this.joueur1;
+		if (mouvement.nbrBoulesSelectionnees>3)
+			return false;
+		return true;
 	}
+
 
 
 
@@ -57,6 +79,10 @@ public class Abalone
 
 	private boolean unJoueurAGagne()
 	{
+		if ((boulesNoiresSorties==7) || (boulesBlanchesSorties==7))
+		{
+			return true;
+		}
 		return false;
 	}
 

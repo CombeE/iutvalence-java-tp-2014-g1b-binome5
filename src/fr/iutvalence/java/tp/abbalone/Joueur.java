@@ -9,14 +9,6 @@ import javax.naming.PartialResultException;
  */
 public class Joueur
 {
-	private int couleur;
-	/*
-	public enum JoueurEnCours
-	{
-		joueur1;
-		joueur2;
-	}
-	*/
 	
 	public Joueur()
 	{
@@ -24,9 +16,9 @@ public class Joueur
 	}
 	
 	
-	public void obtenirBoulesADeplacer()
+	public Mouvement obtenirMouvement()
 	{
-				
+		return null;	
 	}
 	
 }

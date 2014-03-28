@@ -5,15 +5,17 @@ public class Mouvement
 	private Position[] positionBilles;
 	private TypeMouvement typeMouvement;
 	private Direction direction;
+	public int nbrBoulesSelectionnees;
 	
 	public Mouvement(Position[] pos, TypeMouvement typeMouv, Direction direc)
 	{
 		this.positionBilles=pos;
 		this.typeMouvement=typeMouv;
 		this.direction=direc;
+		
 	}
 	
-	public Position[] getPosition()
+	public Position[] getPositions()
 	{
 		return this.positionBilles;
 	}
