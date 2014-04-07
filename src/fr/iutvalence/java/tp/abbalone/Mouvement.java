@@ -30,8 +30,9 @@ public class Mouvement
 		return this.direction;
 	}
 	
-	public int getNbrBoulesSelectionnees()
+	public int getNombreDeBoules()
 	{
 		return positionsBilles.size();
 	}
+	
 }

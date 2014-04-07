@@ -5,10 +5,10 @@ public class Position
 	private int numeroLigne;
 	private int numeroColonne;
 	
-	public Position(int abs, int ord)
+	public Position(int numeroDeLigne, int numeroDeColonne)
 	{
-		this.numeroLigne=abs;
-		this.numeroColonne=ord;
+		this.numeroLigne=numeroDeLigne;
+		this.numeroColonne=numeroDeColonne;
 	}
 	
 	public int getNumeroLigne()
@@ -19,4 +19,12 @@ public class Position
 	{
 		return this.numeroColonne;
 	}
+
+	@Override
+	public String toString()
+	{
+		return "Position [numeroLigne=" + numeroLigne + ", numeroColonne=" + numeroColonne + "]";
+	}
+	
+	
 }
