@@ -51,6 +51,11 @@ public class Plateau
 		};
 			
 	}
+	
+	public Couleur getEtatDeLaCase(Position pos)
+	{
+		return this.etatDesCases[pos.getNumeroLigne()][pos.getNumeroColonne()];
+	}
 
 
 	@Override
@@ -79,7 +84,7 @@ public class Plateau
 		return result;
 	}
 	
-	public static void modifierCases(int coord1[], int coord2[])
+	public static void modifierCases(Position coord1[], Position coord2[])
 	{
 		
 	}

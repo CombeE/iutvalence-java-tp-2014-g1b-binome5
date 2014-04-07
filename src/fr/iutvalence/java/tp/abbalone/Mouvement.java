@@ -1,23 +1,23 @@
 package fr.iutvalence.java.tp.abbalone;
 
+import java.util.List;
+
 public class Mouvement
 {
-	private Position[] positionBilles;
+	private List<Position> positionsBilles;
 	private TypeMouvement typeMouvement;
 	private Direction direction;
-	public int nbrBoulesSelectionnees;
 	
-	public Mouvement(Position[] pos, TypeMouvement typeMouv, Direction direc)
+	public Mouvement(List<Position> pos, TypeMouvement typeMouv, Direction direc)
 	{
-		this.positionBilles=pos;
+		this.positionsBilles=pos;
 		this.typeMouvement=typeMouv;
 		this.direction=direc;
-		
 	}
 	
-	public Position[] getPositions()
+	public List<Position> getPositions()
 	{
-		return this.positionBilles;
+		return positionsBilles;
 	}
 	
 	public TypeMouvement getTypeMouvement()
@@ -28,5 +28,10 @@ public class Mouvement
 	public Direction getDirection()
 	{
 		return this.direction;
+	}
+	
+	public int getNbrBoulesSelectionnees()
+	{
+		return positionsBilles.size();
 	}
 }

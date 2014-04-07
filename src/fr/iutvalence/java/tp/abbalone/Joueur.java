@@ -9,10 +9,11 @@ import javax.naming.PartialResultException;
  */
 public class Joueur
 {
+	private Couleur couleurJoueur;
 	
-	public Joueur()
+	public Joueur(Couleur couleur)
 	{
-		
+		this.couleurJoueur=couleur;
 	}
 	
 	
@@ -21,4 +22,8 @@ public class Joueur
 		return null;	
 	}
 	
+	public Couleur getCouleur()
+	{
+		return this.couleurJoueur;
+	}
 }

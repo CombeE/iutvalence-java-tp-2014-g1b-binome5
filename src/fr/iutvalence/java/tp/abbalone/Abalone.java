@@ -10,6 +10,8 @@ public class Abalone
 	private static final int NOMBRE_DE_JOUEURS = 2;
 
 	private final Joueur[] joueurs;
+	
+	private Joueur joueurCourant;
 
 	private Plateau plateau;
 	
@@ -23,8 +25,9 @@ public class Abalone
 	public Abalone()
 	{
 		this.joueurs = new Joueur[NOMBRE_DE_JOUEURS];
-		joueurs[0] = new Joueur();
-		joueurs[1] = new Joueur();
+		joueurs[0] = new Joueur(Couleur.BLANCHE);
+		joueurs[1] = new Joueur(Couleur.NOIRE);
+		joueurCourant=joueurs[0];
 		this.plateau = new Plateau();
 		
 	}
@@ -40,7 +43,7 @@ public class Abalone
 		
 		while (true)
 		{
-			Joueur joueurCourant = this.joueurs[numeroDuJoueur];
+			joueurCourant = this.joueurs[numeroDuJoueur];
 			
 			if (unJoueurAGagne()) break;
 			Mouvement mouvement;
@@ -61,8 +64,17 @@ public class Abalone
 
 	private boolean estMouvementValide(Mouvement mouvement)
 	{
-		if (mouvement.nbrBoulesSelectionnees>3)
+		if (mouvement.getNbrBoulesSelectionnees()>3 && mouvement.getNbrBoulesSelectionnees()<1)
 			return false;
+		for (int i=0; i<3; i++)
+		{
+			if(this.plateau.getEtatDeLaCase(mouvement.getPositions().get(i))!=this.joueurCourant.getCouleur() || mouvement.getPositions().get(i)!=null)
+			{
+				return false;
+			}
+				
+		}
+		
 		return true;
 	}
 
