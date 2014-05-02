@@ -1,11 +1,8 @@
 package fr.iutvalence.java.tp.abbalone;
 
-// TODO écrire un commentaire (done)
-
 
 /**
- * Gestionnaire des classes assurant le bon déroulement d'une partie 
- * d'Abalone
+ * Lanceur de partie d'Abalone
  * 
  * @author combeer
  *

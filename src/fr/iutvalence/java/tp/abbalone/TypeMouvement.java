@@ -1,7 +1,8 @@
 package fr.iutvalence.java.tp.abbalone;
 
+// TODO commentaires ?
 public enum TypeMouvement
 {
 	LATERAL,
-	ENLIGNE;
+	EN_LIGNE;
 }

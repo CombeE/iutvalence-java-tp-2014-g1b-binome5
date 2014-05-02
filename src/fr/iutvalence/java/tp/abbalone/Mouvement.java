@@ -2,37 +2,47 @@ package fr.iutvalence.java.tp.abbalone;
 
 import java.util.List;
 
+// TODO commentaire ?
 public class Mouvement
 {
-	private List<Position> positionsBilles;
-	private TypeMouvement typeMouvement;
-	private Direction direction;
+	// TODO commentaire ?
+	private final List<Position> positionsBilles;
+	
+	// TODO commentaire ?
+	private final TypeMouvement type;
+	
+	// TODO commentaire ?
+	private final Direction direction;
 	
 	public Mouvement(List<Position> pos, TypeMouvement typeMouv, Direction direc)
 	{
 		this.positionsBilles=pos;
-		this.typeMouvement=typeMouv;
+		this.type=typeMouv;
 		this.direction=direc;
 	}
 	
-	public List<Position> getPositions()
+	// TODO commentaire ?
+	public List<Position> obtenirPositions()
 	{
 		return positionsBilles;
 	}
-	
-	public TypeMouvement getTypeMouvement()
+
+	// TODO commentaire ?
+	public TypeMouvement obtenirType()
 	{
-		return this.typeMouvement;
+		return this.type;
 	}
 	
-	public Direction getDirection()
+	// TODO commentaire ?
+	public Direction obtenirDirection()
 	{
 		return this.direction;
 	}
 	
-	public int getNombreDeBoules()
+	// TODO commentaire ?
+	public int obtenirNombreDeBoules()
 	{
-		return positionsBilles.size();
+		return this.positionsBilles.size();
 	}
 	
 }

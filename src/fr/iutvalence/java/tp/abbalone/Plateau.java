@@ -1,31 +1,22 @@
 package fr.iutvalence.java.tp.abbalone;
 
-// TODO écrire un commentaire plus précis (done)
-
 /**
- * Creer un plateau ainsi que les boules à leur place initiale 
+ * Représente un plateau d'Abalone
  * @author combeer
  */
 
 public class Plateau
-{
-	// TODO écrire un commentaire (done)
-	
+{	
 	/**
-	 * Initie le nombre de lignes d'un plateau d'Abalone
+	 * Nombre de lignes
 	 */
 	public static final int NOMBRE_DE_LIGNES = 9;
-
-	// TODO écrire un commentaire (done)
 	
 	/**
-	 *  Initie le nombre de colonnes d'un plateau d'Abalone
+	 *  Nombre de colonnes
 	 */
 	public static final int NOMBRE_DE_COLONNES = 9;
 	
-	// TODO écrire un commentaire (done)
-
-	// TODO définir les valeurs possibles par des constantes (done)
 	/**
 	 * L'état d'occupation des cases
 	 */
@@ -52,9 +43,10 @@ public class Plateau
 			
 	}
 	
-	public Couleur getEtatDeLaCase(Position pos)
+	// TODO commentaire ?
+	public Couleur obtenirEtatDeLaCase(Position pos)
 	{
-		return this.etatDesCases[pos.getNumeroLigne()][pos.getNumeroColonne()];
+		return this.etatDesCases[pos.obtenirNumeroLigne()][pos.obtenirNumeroColonne()];
 	}
 
 
@@ -84,6 +76,7 @@ public class Plateau
 		return result;
 	}
 	
+	// TODO commentaire ?
 	public static void modifierCases(Position coord1[], Position coord2[])
 	{
 		

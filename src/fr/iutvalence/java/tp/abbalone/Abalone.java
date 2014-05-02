@@ -11,17 +11,25 @@ import java.util.List;
 public class Abalone
 {
 
+	// TODO commentaire ?
 	private static final int NOMBRE_DE_JOUEURS = 2;
 
+	// TODO commentaire ?
 	private static final int NOMBRE_MAXIMUM_DE_BOULES_PAR_MOUVEMENT = 3;
 
+	// TODO commentaire ?
 	private final Joueur[] joueurs;
 
+	// TODO commentaire ?
 	private Joueur joueurCourant;
 
-	private Plateau plateau;
+	// TODO commentaire ?
+	private final Plateau plateau;
 
+	// TODO commentaire ?
 	private int boulesNoiresSorties;
+	
+	// TODO commentaire ?
 	private int boulesBlanchesSorties;
 
 	// TODO écrire un commentaire plus précis (done)
@@ -31,9 +39,9 @@ public class Abalone
 	public Abalone()
 	{
 		this.joueurs = new Joueur[NOMBRE_DE_JOUEURS];
-		joueurs[0] = new Joueur(Couleur.BLANCHE);
-		joueurs[1] = new Joueur(Couleur.NOIRE);
-		joueurCourant = joueurs[0];
+		this.joueurs[0] = new Joueur(Couleur.BLANCHE);
+		this.joueurs[1] = new Joueur(Couleur.NOIRE);
+		this.joueurCourant = this.joueurs[0];
 		this.plateau = new Plateau();
 
 	}
@@ -47,14 +55,14 @@ public class Abalone
 
 		while (true)
 		{
-			joueurCourant = this.joueurs[numeroDuJoueur];
+			this.joueurCourant = this.joueurs[numeroDuJoueur];
 
 			if (unJoueurAGagne())
 				break;
 			Mouvement mouvement;
 			while (true)
 			{
-				mouvement = joueurCourant.obtenirMouvement();
+				mouvement = this.joueurCourant.obtenirMouvement();
 				if (this.estMouvementValide(mouvement))
 					break;
 			}
@@ -65,6 +73,7 @@ public class Abalone
 		}
 	}
 
+	// TODO commentaire ?
 	private boolean estMouvementValide(Mouvement mouvement)
 	{
 		if (!this.estNombreDeBoulesDuMouvementCorrect(mouvement))
@@ -77,6 +86,7 @@ public class Abalone
 		return true;
 	}
 
+	// TODO commentaire ?
 	public static List<Position> triDesPositionsParNumeroDeColonneCroissant(List<Position> positions)
 	{
 		List<Position> copie = new LinkedList<Position>();
@@ -85,15 +95,15 @@ public class Abalone
 		List<Position> resultat = new LinkedList<Position>();
 		for (int indiceParcoursGlobal = 0; indiceParcoursGlobal<positions.size();indiceParcoursGlobal++)
 		{
-			int minProvisoire = copie.get(0).getNumeroColonne();
+			int minProvisoire = copie.get(0).obtenirNumeroColonne();
 			int indexMinProvisoire = 0;
 			
 			for (int indiceSousParcours = 1; indiceSousParcours<copie.size();indiceSousParcours++)
 			{
-				if (copie.get(indiceSousParcours).getNumeroColonne() < minProvisoire)
+				if (copie.get(indiceSousParcours).obtenirNumeroColonne() < minProvisoire)
 				{
 					indexMinProvisoire = indiceSousParcours;
-					minProvisoire = copie.get(indexMinProvisoire).getNumeroColonne();
+					minProvisoire = copie.get(indexMinProvisoire).obtenirNumeroColonne();
 				}
 			}
 			resultat.add(copie.get(indexMinProvisoire));
@@ -105,40 +115,44 @@ public class Abalone
 	
 	private boolean toutesLesBoulesDuMouvementSontAdjacentes(Mouvement mouvement)
 	{
-		switch (mouvement.getTypeMouvement())
+		switch (mouvement.obtenirType())
 		{
 		case LATERAL: 
 		{
 			
-			List<Position> positionsTrieesParNumeroDeColonne = //;
+			//List<Position> positionsTrieesParNumeroDeColonne = //;
 		}
-		case ENLIGNE:
+		case EN_LIGNE:
 		default:
 		}
-		switch (mouvement.getDirection())
+		switch (mouvement.obtenirDirection())
 	}
 
+	// TODO commentaire ?
 	private boolean toutesLesBoulesduMouvementAppartiennentAuJoueurCourant(Mouvement mouvement)
 	{
-		for (Position positionDeLaBoule : mouvement.getPositions())
-			if (this.plateau.getEtatDeLaCase(positionDeLaBoule) != this.joueurCourant.getCouleur())
+		for (Position positionDeLaBoule : mouvement.obtenirPositions())
+			if (this.plateau.obtenirEtatDeLaCase(positionDeLaBoule) != this.joueurCourant.obtenirCouleur())
 				return false;
 
 		return true;
 	}
 
+	// TODO commentaire ?
 	private boolean estNombreDeBoulesDuMouvementCorrect(Mouvement mouvement)
 	{
-		return (mouvement.getNombreDeBoules() > 0)
-				&& (mouvement.getNombreDeBoules() <= NOMBRE_MAXIMUM_DE_BOULES_PAR_MOUVEMENT);
+		return (mouvement.obtenirNombreDeBoules() > 0)
+				&& (mouvement.obtenirNombreDeBoules() <= NOMBRE_MAXIMUM_DE_BOULES_PAR_MOUVEMENT);
 	}
 
+	// TODO commentaire ?
 	private void deplacerBoules()
 	{
 		// TODO Auto-generated method stub
 
 	}
 
+	// TODO commentaire ?
 	private boolean unJoueurAGagne()
 	{
 		if ((boulesNoiresSorties == 7) || (boulesBlanchesSorties == 7))
